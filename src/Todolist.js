@@ -1,26 +1,31 @@
 import React, { useState } from 'react';
 
-const Todolist = () => {
+const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [tasksDeleted, setTasksDeleted] = useState(false);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    if (inputValue.trim() === '') return false;
+    if (inputValue.trim() === '') return;
 
     const newTask = {
       id: new Date().getTime(),
       text: inputValue,
-      completed: false,
+      completed: false
     };
 
     setTasks([...tasks, newTask]);
     setInputValue('');
   };
 
-  const handleForDelete = (taskId) => {
+  const handleTaskDelete = (taskId) => {
     const filteredTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(filteredTasks);
+
+    if (filteredTasks.length === 0) {
+      setTasksDeleted(true);
+    }
   };
 
   return (
@@ -42,7 +47,7 @@ const Todolist = () => {
           {tasks.map((task) => (
             <li key={task.id}>
               {task.text}
-              <button onClick={() => handleForDelete(task.id)}>✅</button>
+              <button onClick={() => handleTaskDelete(task.id)}>Delete</button>
             </li>
           ))}
         </ul>
@@ -57,4 +62,5 @@ const Todolist = () => {
   );
 };
 
-export default Todolist;
+
+export default TodoList;
