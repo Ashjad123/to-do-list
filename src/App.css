@@ -1,0 +1,78 @@
+* {
+  background-color: #009e8e;
+
+
+}
+
+div header {
+  height: 70px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #22a699;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-image: linear-gradient(#f2be22, #f2be22);
+}
+
+.box {
+  background-color: #f2be22;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  left: 480px;
+  top: 100px;
+  border: 5px solid black;
+}
+
+.input_button {
+  display: flex;
+  align-items: center;
+}
+
+.input_button input {
+  flex: 1;
+  height: 50px;
+  padding: 0 10px;
+  border: none;
+  background-color: #f29727;
+  color: white;
+  font-size: 16px;
+}
+
+.input_button button {
+  width: 70px;
+  height: 50px;
+  border: none;
+  background-color: #F24C3D;
+  color: white;
+  font-size: 16px;
+}
+
+.task_list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.task_list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #f29727;
+  font-size: 18px;
+  background-color: #F24C3D;
+}
+
+.task_list li:last-child {
+  border-bottom: none;
+}
+
+.congratulations_message {
+  text-align: center;
+  font-size: 40px;
+  color: #f24c3d;
+  font-weight: bold;
+  margin-top: 120px;
+  background-color: #f2be22;
+}
